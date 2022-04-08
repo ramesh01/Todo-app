@@ -37,8 +37,8 @@ const Todo = (props) => {
                             <input className="form-control" value={todoInput} type="text" maxLength={150} onChange={onchangeHandler}/>
                         </div>
                         <div className={`${classNames(classes.margin_left)}`}>
-                            <button type="button" role="button" className={`btn btn-primary ${classNames(classes.margin_right)}`} onClick={addTodoInput} disabled={checkTodoValue()}>Add</button>
-                            <button type="button" role="button" className="btn btn-outline-secondary" onClick={clearTodoInput}>Clear</button>
+                            <button type="button" className={`btn btn-primary ${classNames(classes.margin_right)}`} onClick={addTodoInput} disabled={checkTodoValue()}>Add</button>
+                            <button type="button" className="btn btn-outline-secondary" onClick={clearTodoInput}>Clear</button>
                         </div>
                     </div>
                 </form>
