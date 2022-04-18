@@ -1,0 +1,12 @@
+.no_data {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 220px;
+    background: #eee;
+    margin-top: 5rem;
+}
+
+.todo_container {
+    margin-top: 5rem !important;
+}

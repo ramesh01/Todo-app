@@ -7,8 +7,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 import todoReducer from './features/todo';
+
 const store = configureStore({
-  reducer:{
+  reducer: {
     todo: todoReducer
   }
 });
