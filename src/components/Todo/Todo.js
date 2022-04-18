@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import classes from './Todo.module.css';
 import classNames from 'classnames/bind';
 import { useDispatch, useSelector } from "react-redux";
-import { addTodo, editTodo } from "../../features/todo";
+import { editTodo } from "../../features/todo";
 import { db } from "../../firebase_config";
 import { collection, addDoc, updateDoc, doc } from "firebase/firestore";
 
-const Todo = (props) => {
+const Todo = () => {
     const intialValue = {todo: '', id: '', time: ''};
     const dispatch = useDispatch();
     const [todoInput, setTodoInput] = useState(intialValue);
@@ -18,8 +18,7 @@ const Todo = (props) => {
     }
 
     const onchangeHandler = (event) => {
-        let {todo, id} = todoInput;
-        todo = event.target.value;
+        let { id } = todoInput;
         setTodoInput({todo: event.target.value, id: id, time: ''});
     }
 
