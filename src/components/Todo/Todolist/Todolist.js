@@ -10,12 +10,12 @@ import Loader from "../../Loader/Loader";
 const Todolist = () => {
     const todo = useSelector((state) => state.todo.todoList);
     const [todoArr, setTodoArr] = useState([]);
-    const todosCollectionRef = collection(db, "todolist");
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         setLoading(true);
         const getTodos = async ()=> {
+            const todosCollectionRef = collection(db, "todolist");
             const data = await getDocs(todosCollectionRef);
             const dataArr = data.docs.map((doc) => ({...doc.data(), id: doc.id}));
             const todoListArr = dataArr.map((el) => ({todo: el.todo, time: new Date(el.time.seconds * 1000), id: el.id}));
@@ -23,7 +23,7 @@ const Todolist = () => {
             setLoading(false);
         };
         getTodos();
-      }, [todo, todosCollectionRef]);
+      }, [todo]);
     return(
         <div className={`row ${classNames(classes.todo_container)}`}>
             { loading &&  <Loader/> }
