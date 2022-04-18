@@ -23,12 +23,12 @@ const Todolist = () => {
             setLoading(false);
         };
         getTodos();
-      }, [todo]);
+      }, [todo, todosCollectionRef]);
     return(
         <div className={`row ${classNames(classes.todo_container)}`}>
             { loading &&  <Loader/> }
             { todoArr.length > 0 && todoArr.map((item, index)=>{ return <Todoitem key={index} id={item.id} todo={item.todo} item={item} />}) }
-            { todoArr.length == 0 && <div className={classNames(classes.no_data)}><p>No Todo is found.</p></div> }
+            { todoArr.length === 0 && <div className={classNames(classes.no_data)}><p>No Todo is found.</p></div> }
         </div>
     )
 }
